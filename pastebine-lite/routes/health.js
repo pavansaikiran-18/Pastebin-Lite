@@ -1,14 +1,12 @@
-const express = require("express");
-const pool = require("../db");
-
-const router = express.Router();
+const router = require("express").Router();
+const db = require("../db");
 
 router.get("/", async (req, res) => {
   try {
-    await pool.query("SELECT 1");
-    res.json({ ok: true });
+    await db.$queryRaw`SELECT 1`;
+    return res.json({ ok: true });
   } catch {
-    res.status(500).json({ ok: false });
+    return res.status(500).json({ ok: false });
   }
 });
 

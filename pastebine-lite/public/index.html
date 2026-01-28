@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pastebin Lite</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <h1>Pastebin Lite</h1>
+  <div class="container">
+    <h1>Pastebin Lite</h1>
+    <p class="subtitle">Create and share text instantly</p>
 
-  <textarea id="content" placeholder="Enter your paste here..."></textarea>
+    <textarea id="content" placeholder="Type or paste your text here..."></textarea>
 
-  <input id="ttl" type="number" placeholder="TTL seconds (optional)">
-  <input id="views" type="number" placeholder="Max Views (optional)">
+    <div class="row">
+      <div class="input-group">
+        <label>Time to Live (seconds)</label>
+        <input id="ttl" type="number" placeholder="Optional">
+      </div>
 
-  <button onclick="createPaste()">Create Paste</button>
+      <div class="input-group">
+        <label>Maximum Views</label>
+        <input id="views" type="number" placeholder="Optional">
+      </div>
+    </div>
 
-  <p id="result"></p>
+    <button id="createBtn">Create Paste</button>
 
-  <script src="script.js"></script>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script src="/script.js"></script>
 </body>
 </html>
